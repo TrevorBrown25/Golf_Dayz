@@ -18,6 +18,7 @@ body {
   font-family: 'Segoe UI', 'Roboto', sans-serif;
   background: radial-gradient(circle at top, #2d323f, var(--background));
   color: var(--text-primary);
+  line-height: 1.5;
 }
 
 .App {
@@ -28,7 +29,7 @@ body {
 
 .App-header {
   background: linear-gradient(160deg, #20232a 0%, #1d1f27 60%, #10131a 100%);
-  padding: 4rem 1.5rem 3rem;
+  padding: 3rem 1.25rem 2.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -42,6 +43,7 @@ body {
   pointer-events: none;
 }
 
+
 .hero {
   max-width: 960px;
   margin: 0 auto;
@@ -51,7 +53,7 @@ body {
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-size: clamp(2.25rem, 7vw, 3.5rem);
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -64,28 +66,31 @@ body {
 .hero p {
   margin: 1rem auto 1.5rem;
   max-width: 640px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-muted);
 }
 
 .hero-actions {
-  margin-top: 2rem;
+  margin-top: 1.75rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .button {
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
-  padding: 0.75rem 1.75rem;
+  padding: 0.75rem 1.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  width: 100%;
+  max-width: 18rem;
 }
 
 .primary-button {
@@ -120,7 +125,7 @@ body {
 .hero-nav {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
@@ -139,24 +144,25 @@ body {
   color: #b4efff;
 }
 
+
 .App-main {
-  width: min(1200px, 90vw);
-  margin: -3rem auto 0;
+  width: min(100%, 72rem);
+  margin: -2.5rem auto 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  padding-bottom: 4rem;
+  gap: 2.5rem;
+  padding: 0 1.25rem 3.5rem;
 }
 
 .home-main {
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .section {
   background: var(--surface-light);
   backdrop-filter: blur(14px);
-  padding: 2.5rem;
+  padding: 1.75rem;
   border-radius: var(--card-radius);
   box-shadow: var(--shadow);
 }
@@ -167,7 +173,7 @@ body {
 }
 
 .section-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .section-header h2 {
@@ -177,37 +183,32 @@ body {
 .section h2 {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  font-size: 2rem;
+  font-size: 1.75rem;
   color: #b4efff;
 }
 
 .grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
-.home-grid {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.rules-grid {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
+.home-grid,
+.rules-grid,
 .owners-grid {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .payouts-grid {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .division-highlight {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  margin-bottom: 1.75rem;
+  grid-template-columns: minmax(0, 1fr);
+  margin-bottom: 1.5rem;
 }
+
 
 .card {
   background: rgba(21, 24, 32, 0.75);
@@ -217,6 +218,7 @@ body {
   box-shadow: inset 0 0 0 1px rgba(97, 218, 251, 0.12);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 
 .highlight-card {
   display: flex;
@@ -238,6 +240,7 @@ body {
   margin-top: 0;
   color: #f4fbff;
 }
+
 
 .card-list {
   list-style: none;
@@ -275,11 +278,14 @@ body {
   left: 0;
 }
 
+
 .owner-card header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.75rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .owner-card .owner-name {
@@ -298,11 +304,13 @@ body {
   color: var(--accent);
 }
 
+
 .cta-row {
-  margin-top: 2rem;
+  margin-top: 1.75rem;
   display: flex;
   justify-content: center;
 }
+
 
 .muted {
   color: var(--text-muted);
@@ -310,10 +318,12 @@ body {
   margin-bottom: 0.75rem;
 }
 
+
 .schedule-card table {
   width: 100%;
   border-collapse: collapse;
 }
+
 
 .schedule-card th,
 .schedule-card td {
@@ -322,15 +332,18 @@ body {
   border-bottom: 1px solid rgba(97, 218, 251, 0.12);
 }
 
+
 .schedule-card th {
   color: var(--accent);
   font-size: 0.85rem;
   letter-spacing: 0.5px;
 }
 
+
 .payout-card {
   text-align: center;
 }
+
 
 .payout-card .payout-amount {
   font-size: 1.8rem;
@@ -339,9 +352,11 @@ body {
   color: var(--accent);
 }
 
+
 .resource-card ul li + li {
   margin-top: 0.75rem;
 }
+
 
 .resource-card a {
   color: var(--accent);
@@ -349,24 +364,70 @@ body {
   font-weight: 600;
 }
 
+
 .resource-card a:hover,
 .resource-card a:focus {
   text-decoration: underline;
 }
 
 .App-footer {
-  padding: 2rem 1rem 3rem;
+  padding: 2rem 1.25rem 3rem;
   text-align: center;
   color: var(--text-muted);
   font-size: 0.9rem;
 }
 
-@media (max-width: 600px) {
-  .section {
-    padding: 1.75rem;
+@media (min-width: 480px) {
+  .hero-actions {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 600px) {
+  .App-main {
+    margin-top: -3rem;
+    padding: 0 1.75rem 4rem;
+    gap: 3rem;
   }
 
-  .hero-nav {
-    gap: 1rem;
+  .section {
+    padding: 2rem;
+  }
+
+  .grid {
+    gap: 1.5rem;
+  }
+
+  .home-grid,
+  .rules-grid,
+  .owners-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .payouts-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .division-highlight {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .App-header {
+    padding: 4.5rem 2rem 3.5rem;
+  }
+
+  .App-main {
+    padding: 0 2.5rem 4.5rem;
+    width: min(1200px, 90vw);
+  }
+
+  .section {
+    padding: 2.5rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
   }
 }
