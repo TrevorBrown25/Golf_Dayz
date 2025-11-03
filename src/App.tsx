@@ -5,9 +5,24 @@ import HomePage from './pages/HomePage';
 import RulesPage from './pages/RulesPage';
 
 function App() {
-  const basename = process.env.PUBLIC_URL
-    ? new URL(process.env.PUBLIC_URL, window.location.origin).pathname
-    : '/';
+  const basename = React.useMemo(() => {
+    if (typeof window === 'undefined') {
+      return '/';
+    }
+
+    const githubPagesBase = '/Golf_Dayz';
+    const { pathname } = window.location;
+    const normalizedPath = pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
+
+    if (
+      normalizedPath === githubPagesBase ||
+      normalizedPath.startsWith(`${githubPagesBase}/`)
+    ) {
+      return githubPagesBase;
+    }
+
+    return '/';
+  }, []);
 
   return (
     <BrowserRouter basename={basename}>
