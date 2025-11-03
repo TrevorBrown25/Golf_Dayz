@@ -4,6 +4,8 @@ import App from './App';
 
 test('renders golf dayz on the homepage', () => {
   render(<App />);
-  const heading = screen.getByText(/golf dayz/i);
+  const heading = screen.getByRole('heading', {
+    name: /golf dayz fantasy league/i
+  });
   expect(heading).toBeInTheDocument();
 });
