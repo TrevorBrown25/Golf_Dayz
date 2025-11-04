@@ -22,11 +22,11 @@ const ScheduleTable: React.FC<ScheduleTableProps> = ({ schedule }) => {
         <tbody>
           {schedule.map((entry) => (
             <tr key={entry.week}>
-              <td>{entry.week}</td>
-              <td>{entry.date}</td>
-              <td>{entry.course}</td>
-              <td>{entry.format}</td>
-              <td>{entry.featuredEvent ?? 'TBA'}</td>
+              <td data-label="Week">{entry.week}</td>
+              <td data-label="Date">{entry.date}</td>
+              <td data-label="Course">{entry.course}</td>
+              <td data-label="Format">{entry.format}</td>
+              <td data-label="Featured Event">{entry.featuredEvent ?? 'TBA'}</td>
             </tr>
           ))}
         </tbody>
