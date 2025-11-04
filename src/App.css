@@ -339,6 +339,59 @@ body {
   letter-spacing: 0.5px;
 }
 
+@media (max-width: 640px) {
+  .schedule-card table,
+  .schedule-card tbody,
+  .schedule-card tr,
+  .schedule-card td {
+    display: block;
+    width: 100%;
+  }
+
+  .schedule-card thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .schedule-card tbody {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .schedule-card tr {
+    background: rgba(21, 24, 32, 0.75);
+    border: 1px solid rgba(97, 218, 251, 0.12);
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px rgba(97, 218, 251, 0.08);
+  }
+
+  .schedule-card td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(97, 218, 251, 0.08);
+    color: var(--text-primary);
+  }
+
+  .schedule-card td:last-child {
+    border-bottom: none;
+  }
+
+  .schedule-card td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+  }
+}
+
 
 .payout-card {
   text-align: center;
