@@ -319,27 +319,139 @@ body {
 }
 
 
-.schedule-card table {
-  width: 100%;
-  border-collapse: collapse;
+.schedule-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-
-.schedule-card th,
-.schedule-card td {
-  padding: 0.75rem 0.5rem;
-  text-align: left;
-  border-bottom: 1px solid rgba(97, 218, 251, 0.12);
+.schedule-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
+.schedule-card__controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(97, 218, 251, 0.08);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
 
-.schedule-card th {
-  color: var(--accent);
+.schedule-card__nav-button {
+  appearance: none;
+  border: none;
+  background: rgba(97, 218, 251, 0.25);
+  color: #04131a;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 18px rgba(97, 218, 251, 0.25);
+}
+
+.schedule-card__nav-button:hover,
+.schedule-card__nav-button:focus {
+  transform: translateY(-1px);
+  background: rgba(97, 218, 251, 0.35);
+}
+
+.schedule-card__nav-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  transform: none;
+  box-shadow: none;
+}
+
+.schedule-card__position {
   font-size: 0.85rem;
-  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: var(--accent);
 }
 
+.tournament-card {
+  background: rgba(21, 24, 32, 0.78);
+  border: 1px solid rgba(97, 218, 251, 0.16);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: inset 0 0 0 1px rgba(97, 218, 251, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
 
+.tournament-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.tournament-card__week {
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tournament-card__date {
+  font-weight: 500;
+}
+
+.tournament-card__details {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.tournament-card__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.tournament-card__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.tournament-card__value {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .schedule-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .schedule-card__controls {
+    align-self: stretch;
+    justify-content: space-between;
+  }
+
+  .tournament-card {
+    padding: 1.25rem;
+  }
+
+  .tournament-card__details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
 .payout-card {
   text-align: center;
 }
